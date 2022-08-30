@@ -594,7 +594,7 @@ body {
 .modal {
   width: 528px;
   height: 581px;
-  height: 100px;
+  /* height: 100px; */
 
   background-color: #fff;
   position: absolute;
