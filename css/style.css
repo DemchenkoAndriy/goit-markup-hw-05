@@ -110,6 +110,8 @@ body {
   padding-bottom: 32px;
   display: flex;
   align-items: center;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-contacts {
@@ -121,7 +123,6 @@ body {
 .header-link:hover,
 .header-link:focus {
   color: var(--accent-color);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .current {
@@ -130,7 +131,7 @@ body {
 }
 .current::after {
   position: absolute;
-  bottom: 0;
+  bottom: -1.5%;
   left: 0;
   content: "";
   width: 100%;
@@ -215,13 +216,12 @@ body {
   font-family: inherit;
 
   padding: 10px 32px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-btn:focus,
 .hero-btn:hover {
   background-color: var(--accent-color2);
-
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* .container-hero {
@@ -373,6 +373,8 @@ body {
   color: var(--title-text-color2);
   margin-bottom: 9px;
   display: block;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contact-item {
   margin-bottom: 9px;
@@ -387,6 +389,7 @@ body {
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--сontact-information-text);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-footer:focus,
@@ -394,7 +397,6 @@ body {
 .postal-address:focus,
 .postal-address:hover {
   color: var(--accent-color);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-contacts-container {
@@ -437,6 +439,10 @@ body {
   font-family: inherit;
 
   padding: 6px 22px;
+
+  transition-property: color, background-color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter-current,
@@ -448,9 +454,6 @@ body {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
 
-  transition-property: color, background-color, box-shadow;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   /* transition: color, background-color 7250ms cubic-bezier(0.4, 0, 0.2, 1); */
 }
 
@@ -470,11 +473,11 @@ body {
 
 .card-link {
   display: block;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .card-link:hover,
 .card-link:focus {
   box-shadow: var(--card-shadow);
-  transition: color, 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card-description {
@@ -494,6 +497,7 @@ body {
   line-height: 2;
   letter-spacing: 0.06em;
   color: var(--title-text-color);
+  margin-bottom: 4px;
 }
 
 .card-text {
@@ -537,13 +541,16 @@ body {
   border-radius: 50%;
   width: 44px;
   height: 44px;
+
+  transition-property: color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link:hover,
 .social-link:focus {
   background-color: var(--accent-color);
   color: var(--primary-background-color);
-  transition: color, 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-link-footer {
   color: var(--title-text-color2);
@@ -570,13 +577,16 @@ body {
   border-radius: 4px;
   width: 100%;
   height: 100%;
+
+  transition-property: color, border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-link:hover,
 .customers-link:focus {
   color: var(--accent-color);
   border-color: var(--accent-color);
-  transition: color, 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* modal */
 
@@ -591,11 +601,17 @@ body {
   opacity: 1;
   transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .modal {
   width: 528px;
   height: 581px;
   /* height: 100px; */
-
+  /* opacity: 1; */
   background-color: #fff;
   position: absolute;
   top: 50%;
@@ -605,13 +621,12 @@ body {
 }
 
 .backdrop.is-hidden .modal {
-  opacity: 0;
-  pointer-events: none;
+  /* opacity: 0; */
+
   transform: translate(-50%, -50%) translateY(-100%);
-  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.button-modal {
+.button-close {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -623,12 +638,6 @@ body {
   border-radius: 50%;
   height: 30px;
   width: 30px;
-}
-
-.backdrop.is-hidden {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* overlay */
