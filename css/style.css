@@ -555,6 +555,10 @@ body {
 .social-link-footer {
   color: var(--title-text-color2);
   background-color: var(--icon-background);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-list {
@@ -670,7 +674,8 @@ body {
   transform: translateY(0%);
   transition: transform 250ms ease;
 }
-.portfolio-card:hover .overlay-text {
+.card-link:hover .overlay-text,
+.card-link:focus .overlay-text {
   transform: translateY(-100%);
   transition: transform 250ms ease;
 }
